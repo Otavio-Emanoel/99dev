@@ -1,171 +1,171 @@
 # 🚀 99dev
 
-> **O "Uber" para correções de código em tempo real.** Conectando desenvolvedores experientes a clientes com bugs urgentes em produção ou códigos quebrados. Pague apenas pelo problema resolvido.
+> **The "Uber" for real-time code corrections.** Connecting experienced developers with clients who have urgent bugs in production or broken code. Pay only for the resolved problem.
 
 ---
 
-## 📋 Índice
+## 📋 Table of Contents
 
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Funcionalidades](#-funcionalidades)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Estrutura do Projeto](#-estrutura-do-projeto)
-- [Como Executar o Projeto](#-como-executar-o-projeto)
-  - [Pré-requisitos](#pré-requisitos)
-  - [Configuração e Inicialização](#configuração-e-inicialização)
-- [Endpoints do Backend](#-endpoints-do-backend)
-- [Fluxo de Funcionamento (Match)](#-fluxo-de-funcionamento-match)
-- [Roadmap de Evolução](#-roadmap-de-evolução)
-
----
-
-## 💡 Sobre o Projeto
-
-O **99dev** é uma plataforma marketplace que funciona de maneira semelhante a aplicativos de corrida (como o Uber), mas voltada para o desenvolvimento de software. 
-
-- **Para Clientes:** Um deploy falhou na sexta-feira? Um bug crítico apareceu e a equipe interna não consegue resolver? O cliente abre um "ticket de socorro", define os detalhes, e a plataforma o conecta a um desenvolvedor disponível em minutos.
-- **Para Desenvolvedores:** Desenvolvedores podem encontrar "corridas" (bugs) disponíveis, analisar as tags e a estimativa de preço, enviar propostas e começar a codar imediatamente, ganhando dinheiro de forma ágil e flexível.
+- [About the Project](#-about-the-project)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Configuration and Startup](#configuration-and-startup)
+- [Backend Endpoints](#-backend-endpoints)
+- [Workflow (Match Sequence)](#-workflow-match-sequence)
+- [Roadmap](#-roadmap)
 
 ---
 
-## ✨ Funcionalidades
+## 💡 About the Project
 
-### 👤 Área do Cliente
-- **Cadastro & Login:** Autenticação dedicada.
-- **Criação de Tickets:** Formulário intuitivo para descrever o problema, anexar logs, e escolher tecnologias.
-- **Estimativa por IA:** Assistência para sugerir uma faixa de preço com base na complexidade do bug.
-- **Pagamento Seguro (Escrow):** O valor fica retido na plataforma e só é liberado após a validação e confirmação da solução pelo cliente.
-- **Acompanhamento em Tempo Real:** Tela de tracking para ver o progresso do desenvolvedor (do match à entrega).
+**99dev** is a marketplace platform that functions similarly to ride-hailing apps (like Uber), but designed for software development.
 
-### 💻 Área do Desenvolvedor
-- **Painel de Oportunidades:** Lista em tempo real com "corridas" de bugs abertas no mercado.
-- **Filtros Inteligentes:** Seleção de bugs baseada nas linguagens e frameworks de preferência do desenvolvedor (ex: React, Node.js, Next.js, CSS).
-- **Proposta & Match:** Envio de lances e tempo estimado para resolução.
-- **Reputação & Histórico:** Sistema de avaliação por estrelas baseado em soluções anteriores para construir autoridade na plataforma.
+- **For Clients:** Did a deploy break on Friday? Did a critical bug show up that your internal team can't resolve? Clients open a "rescue ticket", fill in the details, and the platform connects them to an available developer in minutes.
+- **For Developers:** Developers can browse available "rides" (bugs), analyze tags and price estimates, send proposals, and start coding immediately, earning money quickly and flexibly.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## ✨ Features
 
-O projeto adota uma arquitetura moderna dividida em um monorepositório conceitual (frontend e backend isolados):
+### 👤 Client Area
+- **Signup & Login:** Dedicated authentication pages.
+- **Ticket Creation:** An intuitive form to describe the problem, paste error logs, and choose the technologies involved.
+- **AI Estimation:** AI assistance to suggest a price range based on the bug's complexity.
+- **Secure Payment (Escrow):** Funds are temporarily held by the platform and only released once the client validates and approves the fix.
+- **Real-Time Tracking:** A tracking dashboard to monitor the developer's progress (from match to completion).
+
+### 💻 Developer Area
+- **Opportunity Dashboard:** A real-time feed displaying open bug "rides" currently available.
+- **Smart Filters:** Filter bugs based on preferred languages and frameworks (e.g., React, Node.js, Next.js, CSS).
+- **Proposals & Matching:** Submit bids and estimated resolution times.
+- **Reputation & History:** A star-rating review system based on past fixes to build developer authority on the platform.
+
+---
+
+## 🛠️ Tech Stack
+
+The project uses a modern architecture split into a conceptual monorepo (isolated frontend and backend):
 
 ### Frontend
 - **Framework:** [Next.js 16](https://nextjs.org/) (App Router & React 19)
-- **Estilização:** [Tailwind CSS v4](https://tailwindcss.com/)
-- **Animações:** [Framer Motion](https://www.framer.com/motion/)
-- **Ícones:** [Lucide React](https://lucide.dev/)
-- **Gerenciamento de Estado:** [Zustand](https://zustand-demo.pmnd.rs/)
-- **Componentes de UI:** [Radix UI](https://www.radix-ui.com/) & [Shadcn UI](https://ui.shadcn.com/)
-- **Validação de Formulários:** [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations:** [Framer Motion](https://www.framer.com/motion/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **State Management:** [Zustand](https://zustand-demo.pmnd.rs/)
+- **UI Components:** [Radix UI](https://www.radix-ui.com/) & [Shadcn UI](https://ui.shadcn.com/)
+- **Form Validation:** [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 
 ### Backend
-- **Framework:** [Fastify 5](https://fastify.dev/) (Rápido, de baixo overhead e modular)
-- **Linguagem:** [TypeScript](https://www.typescriptlang.org/)
-- **Desenvolvimento:** [tsx](https://github.com/privatenumber/tsx) (Execução rápida TypeScript sem compilação prévia no dev mode)
+- **Framework:** [Fastify 5](https://fastify.dev/) (High-performance, low overhead, modular)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Development Tooling:** [tsx](https://github.com/privatenumber/tsx) (Fast TypeScript execution without manual pre-compilation during development)
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```bash
 99dev/
-├── backend/                  # Servidor de API (Fastify + TypeScript)
+├── backend/                  # API Server (Fastify + TypeScript)
 │   ├── src/
-│   │   ├── config/           # Configurações de ambiente (env.ts)
-│   │   ├── routes/           # Módulos de rotas (health, root, index)
-│   │   ├── app.ts            # Inicialização do Fastify
-│   │   └── server.ts         # Ponto de entrada do servidor
+│   │   ├── config/           # Environment configuration (env.ts)
+│   │   ├── routes/           # Route modules (health, root, index)
+│   │   ├── app.ts            # Fastify application setup
+│   │   └── server.ts         # Server entry point
 │   ├── package.json
 │   └── tsconfig.json
 │
-└── frontend/                 # Interface do Usuário (Next.js + Tailwind v4)
-    ├── app/                  # Estrutura de páginas (Next.js App Router)
-    │   ├── auth/             # Login e cadastro
-    │   ├── create-ticket/    # Criação de novos tickets
-    │   ├── dashboard/        # Painéis do usuário/dev
-    │   ├── job/              # Visualização e tracking de jobs individuais
+└── frontend/                 # User Interface (Next.js + Tailwind v4)
+    ├── app/                  # Page structure (Next.js App Router)
+    │   ├── auth/             # Login and signup
+    │   ├── create-ticket/    # Ticket creation
+    │   ├── dashboard/        # Client and Developer dashboards
+    │   ├── job/              # Individual job tracking and details
     │   └── layout.tsx & page.tsx
-    ├── components/           # Componentes reutilizáveis
-    │   ├── dashboard/        # Headers, sidebar e trackers específicos
-    │   └── ui/               # Componentes visuais base (botões, cards, dialogs)
+    ├── components/           # Reusable components
+    │   ├── dashboard/        # Specific headers, sidebars, and trackers
+    │   └── ui/               # Base UI components (buttons, cards, dialogs)
     ├── hooks/                # Custom React Hooks
-    ├── lib/                  # Utilitários (ex: setup do axios/fetch, cn helper)
-    ├── styles/               # Estilizações globais
+    ├── lib/                  # Utility helpers (e.g. axios/fetch configs, cn helper)
+    ├── styles/               # Global styles
     └── package.json
 ```
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Getting Started
 
-### Pré-requisitos
+### Prerequisites
 
-Certifique-se de ter instalado em sua máquina:
-- **Node.js** (versão 18 ou superior)
-- Um gerenciador de pacotes (preferencialmente **pnpm** devido aos arquivos de lock existentes no projeto, mas você também pode usar **npm** ou **yarn**).
+Make sure you have the following installed on your machine:
+- **Node.js** (version 18 or higher)
+- A package manager (preferably **pnpm** as there are lockfiles present in the directories, though you can use **npm** or **yarn**).
 
-### Configuração e Inicialização
+### Configuration and Startup
 
-#### 1. Clonar o repositório
+#### 1. Clone the repository
 ```bash
 git clone https://github.com/Otavio-Emanoel/99dev.git
 cd 99dev
 ```
 
-#### 2. Executar o Backend
-Abra um terminal na pasta do backend:
+#### 2. Start the Backend
+Open a terminal in the backend directory:
 ```bash
 cd backend
 pnpm install
 pnpm dev
 ```
-O backend iniciará em `http://localhost:3001` por padrão.
+The backend server runs at `http://localhost:3001` by default.
 
-#### 3. Executar o Frontend
-Abra outro terminal na pasta do frontend:
+#### 3. Start the Frontend
+Open another terminal in the frontend directory:
 ```bash
 cd frontend
 pnpm install
 pnpm dev
 ```
-O frontend iniciará em `http://localhost:3000`. Acesse no seu navegador.
+The frontend application runs at `http://localhost:3000`. Open this URL in your web browser.
 
 ---
 
-## 📡 Endpoints do Backend
+## 📡 Backend Endpoints
 
-Atualmente, o backend conta com os seguintes endpoints de verificação e testes iniciais:
+Currently, the backend includes the following entrypoints for initial verification:
 
-- `GET /` - Retorna a mensagem de boas-vindas do servidor.
-- `GET /health` - Retorna o status de integridade do servidor e informações do sistema.
+- `GET /` - Returns a server welcome message.
+- `GET /health` - Returns server health status and system information.
 
 ---
 
-## 🔄 Fluxo de Funcionamento (Match)
+## 🔄 Workflow (Match Sequence)
 
 ```mermaid
 sequenceDiagram
-    participant Cliente
-    participant Plataforma (99dev)
+    participant Client
+    participant Platform (99dev)
     participant Dev
     
-    Cliente->>Plataforma (99dev): Cria ticket de Bug (Descreve o erro)
-    Plataforma (99dev)->>Plataforma (99dev): IA estima preço sugerido
-    Plataforma (99dev)->>Dev: Notifica devs que possuem as tags necessárias
-    Dev->>Plataforma (99dev): Aceita a corrida / Envia contraproposta
-    Plataforma (99dev)->>Cliente: Mostra propostas de Devs
-    Cliente->>Plataforma (99dev): Seleciona o Dev e realiza pagamento seguro (garantia)
-    Plataforma (99dev)->>Dev: Match efetuado. Permite iniciar o trabalho
-    Dev->>Cliente: Envia a solução do bug
-    Cliente->>Plataforma (99dev): Valida e aceita a solução
-    Plataforma (99dev)->>Dev: Libera o pagamento
+    Client->>Platform (99dev): Creates Bug ticket (Describes the issue)
+    Platform (99dev)->>Platform (99dev): AI estimates suggested price
+    Platform (99dev)->>Dev: Notifies devs matching the required tags
+    Dev->>Platform (99dev): Accepts task / Sends counter-proposal
+    Platform (99dev)->>Client: Displays dev proposals
+    Client->>Platform (99dev): Selects Dev and completes secure payment (escrow)
+    Platform (99dev)->>Dev: Match complete. Work can begin
+    Dev->>Client: Delivers bug solution
+    Client->>Platform (99dev): Validates and accepts solution
+    Platform (99dev)->>Dev: Releases payment
 ```
 
 ---
 
-## 🗺️ Roadmap de Evolução
+## 🗺️ Roadmap
 
-- [ ] **Persistência de Dados:** Integração com Banco de Dados Relacional (PostgreSQL via Prisma ORM ou Drizzle).
-- [ ] **Comunicação em Tempo Real:** Integração de WebSockets (Fastify Socket.io ou WebSockets nativos) para notificar instantaneamente os devs quando um bug novo surgir e para o chat de atendimento cliente-dev.
-- [ ] **Gateway de Pagamento:** Integração de pagamentos usando Stripe ou Pix com retenção temporária de fundos.
-- [ ] **Sandbox / Validador:** Ferramenta interna ou integração com ambiente cloud para o cliente testar a resolução do bug em um container seguro antes de liberar o pagamento.
+- [ ] **Data Persistence:** Database integration (PostgreSQL using Prisma ORM or Drizzle).
+- [ ] **Real-Time Communication:** WebSockets integration (Fastify Socket.io or native WebSockets) for instant dev notifications when a new bug is posted, and developer-client chat.
+- [ ] **Payment Gateway:** Integration with Stripe or Pix with temporary escrow retention.
+- [ ] **Sandbox / Validator:** Internal tool or cloud sandbox environment enabling clients to test the bug resolution in a secure container before releasing funds.
