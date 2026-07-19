@@ -1,10 +1,6 @@
 import type { FastifyPluginAsync } from 'fastify';
+import { getHealth } from '../controllers/health.controller.js';
 
 export const healthRoutes: FastifyPluginAsync = async (app) => {
-  app.get('/health', async () => {
-    return {
-      status: 'ok',
-      timestamp: new Date().toISOString(),
-    };
-  });
+  app.get('/health', getHealth);
 };
